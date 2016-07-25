@@ -1,6 +1,6 @@
-# cf-frontend
+# ANGULAR SEED TYPESCRIPT
 
-# Getting started
+## Getting started
 
 1. Install required tool `gulp` and `bower`:
  ```
@@ -17,39 +17,25 @@
  gulp serve
  ```
 
-# Project structure
+## Project structure
 ```
 conf/                   configurations files for gulp, karma, protractor
 gulp/                   individual gulp tasks
-src/                project source code
-|- data/                other project data, will be copied as-is
-|- fonts/               project fonts
-|- images/              project images
-|- libraries/           Bower dependencies
-|- main/                main module, for entry points and global style
-|  |- main.config.ts    app configuration code
-|  |- main.constants.ts app configuration constants
-|  |- main.module.ts    app module definition
-|  |- main.routes.ts    app routes
-|  |- main.run.ts       app entry point
-|  |- main.wrappers.ts  AngularJS module wrappers for external libraries
-|  +- main.scss         style entry point
-|- modules/             project components and modules
-|  |- helpers/          helper services
-|  |- screens/          application screens
-|  |- shell/            application shell
-|  |- ui-components/    shared UI components
-|  |- web-services/     web services
+src/                	project source code
+|- app/                	main module, for entry points and global style
 |  +- ...               additional project modules
+|- images/              project images
+|- styles/              styles files
 |- translations/        translations files
 +- index.html           html entry point
 e2e/                    end-to-end tests
 dist/                   compiled version
 typings/                TypeScript definitions
 reports/                test and coverage reports
+.tmp/                   development version
 ```
 
-# Main gulp tasks
+## Main gulp tasks
 
 Tasks       | Description
 ------------|-------------------------------------------------------------------------------
@@ -70,7 +56,7 @@ about multiple build environments management.
 You can disable opening automatically your default browser when using the `serve` commands by using the flag
 `--skip-open`.
 
-# Coding guides
+## Coding guides
 
 - [JavaScript](docs/coding-guides/javascript.md)
 - [TypeScript](docs/coding-guides/typescript.md)
@@ -79,7 +65,7 @@ You can disable opening automatically your default browser when using the `serve
 - [Unit tests](docs/coding-guides/unit-tests.md)
 - [End-to-end tests](docs/coding-guides/e2e-tests.md)
 
-# Additional documentation
+## Additional documentation
 
 - [Build environments](docs/build-environments.md)
 - [i18n](docs/i18n.md)
@@ -87,7 +73,7 @@ You can disable opening automatically your default browser when using the `serve
 - [All gulp tasks](docs/tasks.md)
 - [Updating dependencies](docs/updating.md)
 
-# Features
+## Features
 
 #### Languages
 - [TypeScript](http://www.typescriptlang.org), JavaScript
