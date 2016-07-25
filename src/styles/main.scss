@@ -1,0 +1,19 @@
+/*
+ * Entry point of application style.
+ */
+
+// Our own Bootstrap inclusion, should be included before bower dependencies as other libraries may provide
+// additional Bootstrap styling
+@import "base-theme/bootstrap-variables";
+@import "base-theme/bootstrap";
+
+// Do not remove this comments bellow. It's the markers used by wiredep to inject
+// style dependencies when defined in the bower.json of your dependencies.
+// bower:scss
+// endbower
+
+// Theme base customization
+@import "base-theme/custom";
+
+// Theme
+@import "theme/main";
