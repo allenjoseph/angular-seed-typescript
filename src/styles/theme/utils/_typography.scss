@@ -1,0 +1,14 @@
+$fontsizes: (
+	xlarge: $size-xlarge,
+	large: $size-large,
+	medium: $size-medium,
+	small: $size-small
+);
+
+@each $name, $size in $fontsizes {
+
+	.u-fontsize--#{$name} {
+
+		font-size: $size;
+	}
+}
