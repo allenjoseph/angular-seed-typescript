@@ -18,6 +18,17 @@ fs.readdirSync('./gulp').filter(function(file) {
 });
 
 /**
+ * This will save the current task for use it later.
+ */
+gulp.Gulp.prototype.__runTask = gulp.Gulp.prototype._runTask;
+gulp.Gulp.prototype._runTask = function(task) {
+  if(!this.currentTask){
+    this.currentTask = this.seq[this.seq.length - 1];
+  }
+  this.__runTask(task);
+};
+
+/**
  * Default task clean temporaries directories and launch the main optimization build task.
  */
 gulp.task('default', ['clean'], function () {
