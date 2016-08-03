@@ -46,7 +46,7 @@ browserSync.use(browserSyncSpa({
 }));
 
 gulp.task('serve', ['watch'], function (done) {
-	browserSyncInit([conf.paths.tmp, conf.paths.src], open, done);
+	browserSyncInit(conf.paths.tmp, open, done);
 });
 
 gulp.task('serve:dist', ['build'], function (done) {

@@ -3,7 +3,12 @@
 namespace app {
 	'use strict';
 
+	let frameworks = ['ui.router', 'gettext'];
+
+	let modules = ['app.additions'];
+
 	angular
-		.module('app', ['app.core']);
+		.module('app', [...frameworks, ...modules])
+		.config(app.core.configuration);
 
 }

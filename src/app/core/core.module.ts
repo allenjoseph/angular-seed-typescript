@@ -1,4 +1,4 @@
-namespace app.core {
+/*namespace app.core {
 	'use strict';
 
 	let frameworks = ['ui.router'];
@@ -7,4 +7,4 @@ namespace app.core {
 		.module('app.core', [...frameworks])
 		.config(app.core.configuration);
 
-}
+}*/

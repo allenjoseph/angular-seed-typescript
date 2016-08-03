@@ -3,7 +3,7 @@ namespace app.core {
 
 	export class configuration {
 
-		/* @ngInject */	
+		/* @ngInject */
 		constructor (
 			$stateProvider: ng.ui.IStateProvider,
 			$urlRouterProvider: angular.ui.IUrlRouterProvider) {
