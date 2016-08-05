@@ -16,9 +16,6 @@ function listFiles() {
 	return wiredep(wiredepOptions).js
 		.concat([
 			path.join(conf.paths.tmp, '**/*.js'),
-			path.join(conf.paths.src, '/main/**/*.js'),
-			path.join(conf.paths.src, '/modules/**/*.js'),
-			path.join(conf.paths.src, '/**/*.mock.js'),
 			path.join(conf.paths.src, '/**/*.html')
 		]);
 }
@@ -26,6 +23,9 @@ function listFiles() {
 module.exports = function (config) {
 
 	var configuration = {
+
+		//fix problem with conf path
+		basePath: '../',
 
 		// List of files/patterns to load in the browser
 		files: listFiles(),
@@ -49,9 +49,8 @@ module.exports = function (config) {
 			// The whitelist config option allows you to further narrow the subset of files
 			// karma-angular-filesort will sort for you
 			whitelist: [
-				path.join(conf.paths.tmp, '/**/!(*.html|*.spec|*.mock).js'),
-				path.join(conf.paths.src, '/main/**/!(*.html|*.spec|*.mock).js'),
-				path.join(conf.paths.src, '/modules/**/!(*.html|*.spec|*.mock).js')
+				path.join(conf.paths.tmp, '/**/!(*.html|*.spec).js'),
+				path.join(conf.paths.src, '/app/**/!(*.html|*.spec).js')
 			]
 		},
 

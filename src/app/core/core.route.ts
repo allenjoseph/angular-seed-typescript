@@ -1,7 +1,7 @@
 namespace app.core {
 	'use strict';
 
-	export class configuration {
+	export class routes {
 
 		/* @ngInject */
 		constructor (
