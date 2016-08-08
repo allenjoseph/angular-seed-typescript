@@ -13,8 +13,7 @@ var tsProject = $.typescript.createProject('tsconfig.json', { sortOutput: true }
 
 gulp.task('scripts', ['scripts:vendor'], function () {
 	return gulp.src([
-			path.join(conf.paths.src, '/app/**/*.ts'),
-			path.join('!' + conf.paths.bower, '/**/*.ts'),
+			path.join(conf.paths.src, '/app/**/!(*.spec).ts')
 		])
 		.pipe($.sourcemaps.init())
 		.pipe($.tslint())
@@ -26,7 +25,7 @@ gulp.task('scripts', ['scripts:vendor'], function () {
 			includeContent: true,
 			sourceRoot: '../'
 		}))
-		.pipe(gulp.dest(path.join(conf.paths.tmp)));
+		.pipe(gulp.dest(path.join(conf.paths.tmp, '/app/')));
 });
 
 gulp.task('scripts:vendor', function () {

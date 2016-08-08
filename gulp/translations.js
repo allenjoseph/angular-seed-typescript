@@ -16,7 +16,7 @@ gulp.task('translations', function () {
 		.pipe(gulp.dest(path.join(conf.paths.tmp, 'translations')));
 });
 
-gulp.task('translations:extract', ['scripts'], function () {
+gulp.task('translations:extract', ['scripts'], function () {//TODO: paths to review.
 	return gulp.src([
 		path.join(conf.paths.src, '**/*.js'),
 		path.join(conf.paths.tmp, '**/*.js'),

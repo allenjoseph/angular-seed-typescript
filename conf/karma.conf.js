@@ -9,15 +9,14 @@ var wiredep = require('wiredep');
  * list all files that we want to load in the browser
  */
 function listFiles() {
-	var wiredepOptions = _.extend({}, conf.wiredep, {
-		dependencies: true,
-		devDependencies: true
-	});
-	return wiredep(wiredepOptions).js
-		.concat([
-			path.join(conf.paths.tmp, '**/*.js'),
-			path.join(conf.paths.src, '/**/*.html')
-		]);
+	var wiredepOptions = _.extend({}, conf.wiredep, {});//bower files
+
+	return wiredep(wiredepOptions).js.concat([
+		path.join(conf.paths.tmp, 'partials/**/*.js'),//partials files
+		path.join(conf.paths.tmp, 'translations/**/*.js'),//translations files
+		path.join(conf.paths.tmp, 'app/**/!(app.module).js'),//app files
+		path.join(conf.paths.tmp, 'app/app.module.js')
+	]);
 }
 
 module.exports = function (config) {
@@ -49,13 +48,12 @@ module.exports = function (config) {
 			// The whitelist config option allows you to further narrow the subset of files
 			// karma-angular-filesort will sort for you
 			whitelist: [
-				path.join(conf.paths.tmp, '/**/!(*.html|*.spec).js'),
-				path.join(conf.paths.src, '/app/**/!(*.html|*.spec).js')
+				path.join(conf.paths.tmp, 'app/**/*.js')//app files
 			]
 		},
 
 		ngHtml2JsPreprocessor: {
-			stripPrefix: 'src/',
+			stripPrefix: 'src/app/',
 			moduleName: 'templateCache'
 		},
 
@@ -82,7 +80,7 @@ module.exports = function (config) {
 
 		// A map of preprocessors to use
 		preprocessors: {
-			'src/**/*.html': ['ng-html2js'],
+			'src/app/**/*.html': ['ng-html2js'],
 			// Source files, that you wanna generate coverage for.
 			// Do not include tests or libraries.
 			'.tmp/app.ts.js': ['coverage']

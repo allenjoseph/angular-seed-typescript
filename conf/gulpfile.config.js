@@ -23,6 +23,13 @@ exports.paths = {
 };
 
 /**
+ * The main files of project
+ */
+exports.mainFiles = {
+	sass: exports.paths.src + '/styles/main.scss'
+};
+
+/**
  * Sass include paths.
  */
 exports.sassIncludePaths = [

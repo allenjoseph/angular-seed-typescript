@@ -9,8 +9,6 @@ var browserSync = require('browser-sync');
 
 var $ = require('gulp-load-plugins')();
 
-var mainFolder = path.join(conf.paths.src, '/styles');
-
 function buildStyles() {
 	var sassOptions = {
 		outputStyle: 'expanded',
@@ -18,7 +16,7 @@ function buildStyles() {
 		includePaths: conf.sassIncludePaths
 	};
 
-	return gulp.src(path.join(mainFolder, 'main.scss'))
+	return gulp.src(path.join(conf.mainFiles.sass))
 		.pipe(wiredep.stream(_.extend({}, conf.wiredep)))
 		.pipe($.sourcemaps.init())
 		.pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
