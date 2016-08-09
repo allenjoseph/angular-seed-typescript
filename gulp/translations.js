@@ -24,6 +24,7 @@ gulp.task('translations:extract', ['scripts'], function () {//TODO: paths to rev
 		path.join(conf.paths.tmp, '**/*.html'),
 		path.join('!' + conf.paths.bower, '**/*.js'),
 		path.join('!' + conf.paths.src, '**/*.spec.js'),
+		path.join('!' + conf.paths.tmp, '**/*.spec.js'),
 		path.join('!' + conf.paths.bower, '**/*.html'),
 		path.join('!' + conf.paths.src, 'index.html')
     ])

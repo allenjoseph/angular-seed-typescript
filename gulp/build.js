@@ -61,7 +61,7 @@ function transformPath(filePath) {
 
 gulp.task('build:source', ['inject'], function () {
 	var htmlFilter = $.filter('*.html', { restore: true });
-	var jsFilter = $.filter('**/*.js', { restore: true });
+	var jsFilter = $.filter('**/!(*.spec).js', { restore: true });
 	var cssFilter = $.filter('**/*.css', { restore: true });
 
 	return gulp.src(path.join(conf.paths.tmp, 'index.html'))

@@ -9,7 +9,9 @@ var wiredep = require('wiredep');
  * list all files that we want to load in the browser
  */
 function listFiles() {
-	var wiredepOptions = _.extend({}, conf.wiredep, {});//bower files
+	var wiredepOptions = _.extend({}, conf.wiredep, {
+		devDependencies: true
+	});//bower files
 
 	return wiredep(wiredepOptions).js.concat([
 		path.join(conf.paths.tmp, 'partials/**/*.js'),//partials files
