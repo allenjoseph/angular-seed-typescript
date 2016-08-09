@@ -9,9 +9,8 @@ describe('home screen', function () {
 		page = require('./home.po');
 	});
 
-	it('should include jumbotron with correct data', function () {
-		expect(page.title.getText()).toMatch('Hello');
-		expect(page.image.getAttribute('src')).toMatch('angularjs');
+	it('should include title with correct data', function () {
+		expect(page.title.getText()).toMatch('Welcome');
 	});
 
 });

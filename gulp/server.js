@@ -54,7 +54,7 @@ gulp.task('serve:dist', ['build'], function (done) {
 });
 
 gulp.task('serve:e2e', ['inject'], function (done) {
-	browserSyncInit([conf.paths.tmp, conf.paths.src], [], done);
+	browserSyncInit(conf.paths.tmp, [], done);
 });
 
 gulp.task('serve:e2e-dist', ['build'], function (done) {
