@@ -10,7 +10,7 @@ this is a great source for community-approved conventions.
 
 ## Naming conventions
 
-- Use `PascalCase` for type names and enum values
+- Use `PascalCase` for type names and enum values, for every else use `camelCase`.
 - Do not use `_` as a prefix for private properties
 
 ## Coding rules
