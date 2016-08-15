@@ -12,7 +12,7 @@ have setup an API proxy to redirect API calls to whatever URL and port you want.
 
 ## How to configure
 
-In the root folder you will find a `gulpfile.config.js`, containing the API proxy configuration.
+In the conf folder you will find a `gulpfile.config.js`, containing the API proxy configuration.
 
 The interesting part is there:
 ```js

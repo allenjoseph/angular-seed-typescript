@@ -56,7 +56,7 @@ exports.backendProxy = [
 		context: '/api',
 		options: {
 			pathRewrite: { '^/api': '' },
-			target: 'http://api.icndb.com',
+			target: 'http://api.icndb.com', //API | The Internet Chuck Norris Database xD
 			changeOrigin: true
 		}
 	}

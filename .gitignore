@@ -10,6 +10,9 @@ typings/
 .sass-cache
 npm-debug.log
 
+## Translates
+*.mo
+
 ## Karma
 /reports/
 

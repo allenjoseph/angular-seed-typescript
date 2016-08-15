@@ -9,7 +9,7 @@ namespace app {
 
 	angular
 		.module('app', [...frameworks, ...modules])
+		.constant('config', core.config)
 		.config(dashboard.Routes)
 		.run(core.Run);
-
 }

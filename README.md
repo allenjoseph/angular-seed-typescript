@@ -19,20 +19,33 @@
 
 ## Project structure
 ```
-conf/                   configurations files for gulp, karma, protractor
+.tmp/                   development version (untracked files)
+bower_components/       bower libraries (untracked files)
+conf/                   configurations files for gulp, karma, protractor, etc
+dist/                   compiled version (untracked files)
+docs/                   documentation for task, coding-guides, etc
+e2e/                    end-to-end tests
 gulp/                   individual gulp tasks
+node_modules/       	node libraries (untracked files)
 src/                	project source code
-|- app/                	main module, for entry points and global style
-|  +- ...               additional project modules
-|- images/              project images
-|- styles/              styles files
+|- app/                	ts files
+|- images/              images
+|- styles/              sass files
 |- translations/        translations files
 +- index.html           html entry point
-e2e/                    end-to-end tests
-dist/                   compiled version
-typings/                TypeScript definitions
-reports/                test and coverage reports
-.tmp/                   development version
+typings/                TypeScript definitions (untracked files)
+reports/                test and coverage reports (untracked files)
+.bowerrc                bower configuration
+.editorconfig           editor configuration
+.gitignore              untracked files list
+.jshintrc               js hint configuration
+bower.json              bower dependencies configuration
+gulpfile.js             main gulp file 
+package.json            node dependencies configuration
+README.md
+tsconfig.json           configuration to compile typescript
+tslint.json             ts lint configuration
+typings.json            typescript definitions
 ```
 
 ## Main gulp tasks
@@ -83,7 +96,6 @@ You can disable opening automatically your default browser when using the `serve
 #### Quality
 - [TSLint](https://github.com/palantir/tslint)
 - [JSHint](http://jshint.com)
-- [JSCS](http://jscs.info)
 - Unit tests ([Jasmine](http://jasmine.github.io))
 - End-to-end tests ([Protractor](https://github.com/angular/protractor))
 
@@ -92,10 +104,11 @@ You can disable opening automatically your default browser when using the `serve
 - Development server with API proxy and live reload ([BrowserSync](http://www.browsersync.io))
 
 #### Build
-- JS+CSS+HTML bundling and minification ([useref](https://github.com/jonkemp/gulp-useref), 
-  [uglify](https://github.com/terinjokes/gulp-uglify), 
-  [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin), 
-  [clean-css](https://www.npmjs.com/package/gulp-clean-css) 
+- JS+CSS+HTML bundling and minification
+	- [useref](https://github.com/jonkemp/gulp-useref)
+	- [uglify](https://github.com/terinjokes/gulp-uglify)
+	- [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin)
+	- [clean-css](https://www.npmjs.com/package/gulp-clean-css) 
 - CSS browser support ([autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer))
 - Images optimization ([imagemin](https://github.com/sindresorhus/gulp-imagemin))
 - Automatic angular module annotation ([ngAnnotate](https://github.com/Kagami/gulp-ng-annotate))
