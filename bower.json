@@ -1,5 +1,5 @@
 {
-  "name": "cf-frontend",
+  "name": "angular-seed-typescript",
   "version": "1.0.0",
   "dependencies": {
     "angular-animate": "~1.5.5",

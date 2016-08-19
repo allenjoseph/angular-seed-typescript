@@ -20,6 +20,7 @@
 ## Project structure
 ```
 .tmp/                   development version (untracked files)
+.vscode/                vscode settings
 bower_components/       bower libraries (untracked files)
 conf/                   configurations files for gulp, karma, protractor, etc
 dist/                   compiled version (untracked files)

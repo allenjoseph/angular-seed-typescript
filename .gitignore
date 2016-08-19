@@ -5,8 +5,8 @@
 node_modules/
 bower_components/
 typings/
-/.tmp/
-/dist/
+.tmp/
+dist/
 .sass-cache
 npm-debug.log
 
