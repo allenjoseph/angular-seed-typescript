@@ -55,35 +55,22 @@ function setEnvironment(file) {
 	return file;
 }
 
-function transformPath(filePath) {
-	return filePath.replace('bower_components', '../bower_components');
-}
-
-gulp.task('build:source', ['inject'], function () {
-	var htmlFilter = $.filter('*.html', { restore: true });
-	var jsFilter = $.filter('**/!(*.spec).js', { restore: true });
-	var cssFilter = $.filter('**/*.css', { restore: true });
+gulp.task('build:sources', ['inject'], function () {
 
 	return gulp.src(path.join(conf.paths.tmp, 'index.html'))
 		.pipe($.replace(/<html/g, '<html ng-strict-di'))
-		.pipe($.useref({ transformPath: transformPath }))
-		//.pipe($.if('**/app*.js', $.intercept(setEnvironment)))
-		.pipe(jsFilter)
-		.pipe($.ngAnnotate())
-		.pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
-		.pipe($.rev())
-		.pipe(jsFilter.restore)
-		.pipe(cssFilter)
-		.pipe($.cleanCss({ processImport: false }))
-		.pipe($.rev())
-		.pipe(cssFilter.restore)
+		.pipe($.useref())
+		.pipe($.if('**/app.js', $.intercept(setEnvironment)))
+		.pipe($.if('**/app.js', $.ngAnnotate()))
+		.pipe($.if('**/*.js', $.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify')))
+		.pipe($.if('**/*.js', $.rev()))
+		.pipe($.if('**/*.css', $.cleanCss({ processImport: false })))
+		.pipe($.if('**/*.css', $.rev()))
 		.pipe($.revReplace())
-		.pipe(htmlFilter)
-		.pipe($.htmlmin({
+		.pipe($.if('index.html', $.htmlmin({
 			removeComments: true,
 			collapseWhitespace: true
-		}))
-		.pipe(htmlFilter.restore)
+		})))
 		.pipe(gulp.dest(path.join(conf.paths.dist, '/')))
 		.pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
 });
@@ -114,7 +101,7 @@ gulp.task('other', ['fonts'], function () {
 		.pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
-gulp.task('build', ['build:source', 'other', 'images']);
+gulp.task('build', ['build:sources', 'other', 'images']);
 
 gulp.task('clean', ['images:clean-cache'], function () {
 	return $.del([conf.paths.dist, conf.paths.tmp]);

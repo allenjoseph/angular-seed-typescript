@@ -59,7 +59,7 @@ scripts     | Convert all *.ts found in project to js in the temporary folder.
 
 Task         | Description
 -------------|--------------------------------------------------------------------------------------------------------
-build:source | Build and optimize all source files, excluding assets.
+build:sources| Build and optimize all source files, excluding assets.
 partials     | Put all .html found in project folder + in temporary folder in a template cache file.
 styles       | Generate main CSS file using project main style file.
 fonts        | Copy fonts from bower dependencies in dist folder.
