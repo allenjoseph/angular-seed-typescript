@@ -48,3 +48,14 @@ bower udpate
 ```sh
 npm shrinkwrap --dev
 ```
+
+
+## Updating typings referencies
+
+- Show typings list and see the deprecated referencies
+```sh
+typings la
+
+- Updating dependencies
+```sh
+typings install dt~name-of-library --global --save

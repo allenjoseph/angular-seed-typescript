@@ -18,8 +18,10 @@ gulp.task('scripts', ['scripts:vendor'], function () {
 			path.join(conf.paths.src, '/app/**/*.ts')
 		])
 		.pipe($.sourcemaps.init())
-		.pipe($.tslint())
-		.pipe($.tslint.report('prose', { emitError: false }))
+		.pipe($.tslint({
+			formatter: 'prose',
+			emitError: false
+		}))
 		.pipe($.typescript(tsProject)).on('error', conf.errorHandler('TypeScript'))
 		.pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'))
 		.pipe($.if(isProduction, $.filter('**/!(*.spec).js', { restore: true })))
