@@ -10,7 +10,7 @@ describe('home screen', function () {
 	});
 
 	it('should include title with correct data', function () {
-		expect(page.title.getText()).toMatch('Welcome');
+		expect(page.title.getText()).toMatch('Bienvenido');
 	});
 
 });

@@ -16,7 +16,7 @@ function listFiles() {
 	return wiredep(wiredepOptions).js.concat([
 		path.join(conf.paths.tmp, 'partials/**/*.js'),//partials files
 		path.join(conf.paths.tmp, 'translations/**/*.js'),//translations files
-		path.join(conf.paths.tmp, 'app/**/!(app.module).js'),//app files
+		path.join(conf.paths.tmp, 'app/**/*!(app.module).js'),//app files
 		path.join(conf.paths.tmp, 'app/app.module.js')
 	]);
 }
